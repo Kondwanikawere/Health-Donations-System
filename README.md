@@ -1,64 +1,143 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Health Funding App
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A modern health funding platform built with **Laravel**, **Sanctum**, **Livewire**, **Tailwind CSS**, and **Laravel APIs**, designed to manage and streamline the process of health-related donations and interactions between managers, donors, health workers, and patients.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🌐 Tech Stack
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Laravel** – Backend PHP framework
+- **Laravel Sanctum** – Lightweight API authentication
+- **Livewire** – Reactive components for the web admin dashboard
+- **Tailwind CSS** – Utility-first CSS framework for styling
+- **Laravel API** – Provides authenticated RESTful endpoints consumed by a mobile app
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 🧩 Key Features
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 🔧 Admin Dashboard (Web)
+- Manage **donors**, **donations**, **health workers**, and **patients**
+- Dashboard widgets and statistics (e.g., total donations, active users)
+- Approve/reject donation or support requests
+- Real-time interaction with Livewire components
+- Role-based access control for different admin functions
+- API control and user syncing with mobile clients
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 🔌 API Integration
+- Fully secured and authenticated API endpoints
+- Supports role-based access for mobile clients (donors, health workers, patients)
+- Used by a mobile application to sync and manage dashboard data
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## 🗂 Project Structure Overview
 
-### Premium Partners
+```
+- app/
+  - Http/
+    - Controllers/
+    - Middleware/
+    - Resources/
+  - Models/
+- routes/
+  - web.php
+  - api.php
+- resources/
+  - views/
+    - livewire/
+  - css/
+- config/
+- database/
+  - migrations/
+  - seeders/
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+---
 
-## Contributing
+## ⚙️ Getting Started
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/your-username/health-funding-app.git
+   cd health-funding-app
+   ```
 
-## Code of Conduct
+2. **Install dependencies:**
+   ```bash
+   composer install
+   npm install && npm run dev
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+3. **Environment configuration:**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-## Security Vulnerabilities
+4. **Run database migrations and seeders:**
+   ```bash
+   php artisan migrate --seed
+   ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+5. **Serve the application:**
+   ```bash
+   php artisan serve
+   ```
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 🔐 Authentication
+
+- Uses **Laravel Sanctum** for API token-based authentication
+- Web authentication via standard session-based login
+- Mobile clients consume the same API through secure token headers
+
+---
+
+## 📡 API Overview
+
+APIs are accessible via `/api/*` and used by a mobile application.
+
+Example endpoints:
+
+| Method | Endpoint              | Description                        |
+|--------|-----------------------|------------------------------------|
+| POST   | `/api/login`          | Authenticates user and issues token |
+| GET    | `/api/dashboard`      | Returns role-specific dashboard data |
+| GET    | `/api/donations`      | Lists donations by authenticated user |
+| POST   | `/api/donations`      | Creates a new donation entry       |
+| GET    | `/api/health-workers` | Returns list and data of health workers |
+
+> All API routes are protected using Sanctum and require valid tokens.
+
+---
+
+## 👥 User Roles
+
+| Role         | Permissions Description                         |
+|--------------|--------------------------------------------------|
+| **Manager**  | Full admin control: manage users, donations, and APIs |
+| **Donor**    | View/manage donation history                    |
+| **Health Worker** | Manage health services and report activity |
+| **Patient**  | View health funding updates and request status  |
+
+---
+
+## 🧪 Running Tests
+
+```bash
+php artisan test
+```
+
+---
+
+## 📄 License
+
+This project is open-source and distributed under the [MIT License](LICENSE).
+
+---
+
+## 🤝 Contributions
+
+Feel free to fork this repository, open issues, or submit pull requests to contribute to the project.
