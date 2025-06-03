@@ -1,7 +1,7 @@
 
-    <div class="flex items-center">
+    <div class="flex items-center xs:!flex-row vs:!flex-col">
         <!-- Circle Progress -->
-        <div class="relative flex items-center justify-center w-24 h-24 bg-gray-200 rounded-full">
+        <div class="relative flex items-center justify-center vs:!w-12 vs:!h-12 sm:!w-24 sm:!h-24 bg-gray-200 rounded-full">
             <div class="absolute inset-0 flex items-center justify-center">
                 <svg width="60px" height="60px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#35af2c" width="24" height="24" stroke="#35af2c">
 
@@ -14,7 +14,7 @@
         </div>
         <!-- Progress Detail -->
         <div class="ml-4">
-            <p class="mb-2 text-gray-600">Donation Progress</p>
+            <p class="mb-2 text-gray-600 vs:!text-[12px] sm:!text-[16px]">Donation Progress</p>
             <h4 class="text-xl font-bold text-gray-900">{{ $donationsTotal }}</h4>
         </div>
     </div>

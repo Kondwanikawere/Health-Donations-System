@@ -1,5 +1,5 @@
 <div class="flex items-center justify-center w-full h-full p-4 bg-white dark:bg-gray-800 rounded shadow">
-    <div class="relative w-full h-full">
+    <div class="relative w-full h-full ">
         <canvas id="hhhh" class="w-full h-full"></canvas>
     </div>
 

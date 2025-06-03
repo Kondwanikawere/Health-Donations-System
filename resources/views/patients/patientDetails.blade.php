@@ -21,49 +21,49 @@
             </div>
 
     
-            <div class="max-w-64 mx-auto">
-                <div class="grid md:grid-cols-2 mid:gap-6 ml-2">
-                    <div class="relative z-0 w-full mb-5 group">
-                        <p for="floating_first_name" class=" absolute text-base ">Id:  {{ $patient->id}}</p>
+            <div class="max-w-full mx-auto">
+                <div class="grid md:grid-cols-2 mid:gap-6 ml-2 divide-gray-400 divide-x-2">
+                    <div class="flex justify-center z-0 w-full mb-5 group">
+                        <p for="floating_first_name" class="text-base ">Id:  {{ $patient->id}}</p>
                     </div>
-                    <div class="relative z-0 w-full mb-5 group">
-                        <p for="floating_first_name" class=" absolute text-base ">First name:  {{ $patient->firstName }}</p>
-                    </div>
-                </div>
-                <div class="grid md:grid-cols-2 mid:gap-6 ml-2">
-                    <div class="relative z-0 w-full mb-5 group">
-                        <p for="floating_first_name" class=" absolute text-base ">Surname:  {{ $patient->surname }}</p>
-                    </div>
-                    <div class="relative z-0 w-full mb-5 group">
-                        <p for="floating_last_name" class=" absolute text-base ">Disease: {{ $patient->disease }}</p>
+                    <div class="flex justify-center z-0 w-full mb-5 group">
+                        <p for="floating_first_name" class="text-base ">First name:  {{ $patient->firstName }}</p>
                     </div>
                 </div>
-                <div class="grid md:grid-cols-2 mid:gap-6 ml-2">
-                    <div class="relative z-0 w-full mb-5 group">
-                        <p for="floating_first_name" class=" absolute text-base ">Amount: {{ $patient->amount }}</p>
+                <div class="grid md:grid-cols-2 mid:gap-6 ml-2 divide-gray-400 divide-x-2">
+                    <div class="flex justify-center z-0 w-full mb-5 group">
+                        <p for="floating_first_name" class="text-base ">Surname:  {{ $patient->surname }}</p>
                     </div>
-                    <div class="relative z-0 w-full mb-5 group">
-                        <p for="floating_last_name" class=" absolute text-base ">Updated_at: {{ $patient->updated_at }}</p>
+                    <div class="flex justify-center z-0 w-full mb-5 group">
+                        <p for="floating_last_name" class="text-base ">Disease: {{ $patient->disease }}</p>
                     </div>
                 </div>
-                <div class="grid md:grid-cols-2 mid:gap-6 ml-2">
-                    <div class="relative z-0 w-full mb-5 group">
-                        <p for="floating_repeat_password" class=" absolute text-base ">Created_at: {{ $patient->created_at }}</p>
+                <div class="grid md:grid-cols-2 mid:gap-6 ml-2 divide-gray-400 divide-x-2">
+                    <div class="flex justify-center z-0 w-full mb-5 group">
+                        <p for="floating_first_name" class="text-base ">Amount: {{ $patient->amount }}</p>
+                    </div>
+                    <div class="flex justify-center z-0 w-full mb-5 group">
+                        <p for="floating_last_name" class="text-base ">Updated_at: {{ $patient->updated_at }}</p>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 mid:gap-6 ml-2 divide-gray-400 divide-x-2">
+                    <div class="flex justify-center z-0 w-full mb-5 group">
+                        <p for="floating_repeat_password" class="text-base ">Created_at: {{ $patient->created_at }}</p>
                     </div>
 
                     @if($donation)
-                        <div class="relative z-0 w-full mb-5 group">
-                            <p for="floating_last_name" class=" absolute text-base ">Amount_remaining: {{ $donation->amount_remaining }}</p>
+                        <div class="flex justify-center z-0 w-full mb-5 group">
+                            <p for="floating_last_name" class="text-base ">Amount_remaining: {{ $donation->amount_remaining }}</p>
                         </div>
                 <div class="grid md:grid-cols-2 mid:gap-6 ml-2">
-                        <div class="relative z-0 w-full mb-5 group">
-                            <p for="floating_last_name" class=" absolute text-base ">Mode: {{ $donation->mode }}</p>
+                        <div class="flex justify-center z-0 w-full mb-5 group">
+                            <p for="floating_last_name" class="text-base ">Mode: {{ $donation->mode }}</p>
                 </div>
                     </div>
                     @else
 
-                    <div class="relative z-0 w-full mb-5 group">
-                        <p for="floating_last_name" class=" absolute text-base ">Amount_remaining: {{ $patient->amount }}</p>
+                    <div class="flex justify-center  z-0 w-full mb-5 group">
+                        <p for="floating_last_name" class="text-base ">Amount_remaining: {{ $patient->amount }}</p>
                     </div>
                     @endif
 

@@ -1,0 +1,55 @@
+# Laravel & PHP
+/vendor
+/node_modules
+/public/storage
+/storage/*.key
+.env
+.phpunit.result.cache
+Homestead.yaml
+Homestead.json
+/.idea
+/.vscode
+/.phpunit.result.cache
+
+# Laravel specific
+/storage/app/public
+/storage/framework/cache/data
+/storage/framework/sessions
+/storage/framework/testing
+/storage/logs
+bootstrap/cache
+
+# Composer & NPM
+composer.lock
+package-lock.json
+yarn.lock
+npm-debug.log
+pnpm-lock.yaml
+
+# Laravel Livewire
+/livewire-tmp
+
+# TailwindCSS (compiled assets)
+/public/css/*
+!/public/css/.gitkeep
+/public/js/*
+!/public/js/.gitkeep
+
+# IDE & System files
+.DS_Store
+Thumbs.db
+*.log
+*.bak
+*.tmp
+*.swp
+
+# Cache and debug
+*.cache
+.env.backup
+.env.testing
+
+# Build artifacts
+/public/hot
+/public/mix-manifest.json
+/public/build
+/public/*.map
